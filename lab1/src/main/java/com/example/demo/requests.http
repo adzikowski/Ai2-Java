@@ -1,0 +1,33 @@
+###
+GET http://localhost:50965/rest/people
+
+###
+GET http://localhost:50965/rest/person/First/Example
+
+###
+POST http://localhost:50965/rest/addPerson
+Content-Type: application/json
+
+{
+  "firstName": "Adrian",
+  "familyName": "Dzikowski"
+}
+###
+PUT http://localhost:50965/rest/person/Adrian/Dzikowski
+Content-Type: application/json
+
+{
+  "firstName": "Adrian",
+  "familyName": "Przyklad"
+}
+###
+DELETE http://localhost:50965/rest/person
+Content-Type: application/json
+
+{
+  "firstName": "Adrian",
+  "familyName": "Przyklad"
+}
+
+
+

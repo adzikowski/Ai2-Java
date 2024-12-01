@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>People List</title>
+  <style>
+    body {
+      background: url("https://placehold.co/100x100/FFFFFF/EFEFEF/png?text=50965");
+    }
+  </style>
+</head>
+<body>
+<h1>People List</h1>
+<table style="text-align: center; border: 1px solid #000">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Family Name</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="person : ${people}">
+    <td th:text="${person.firstName}">First Name</td>
+    <td th:text="${person.familyName}">Family Name</td>
+    <td>
+      <a th:href="@{/people/edit(firstName=${person.firstName}, familyName=${person.familyName})}">Edit</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a href="/people/edit">Add New Person</a>
+</body>
+</html>
